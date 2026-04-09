@@ -1,7 +1,8 @@
 # Real-time-Vehicle-Detection-Smart-Traffic-Management
 YOLO based detection of vehicles in real time with emergency response while managing the traffic smartly.
 
-
+***Process Workflow***
+video I/P --> vheicle detection --> emergency case(if any) --> smartly handling the traffic light based on vehicle density & emergence case
 
 ***Simple guide To Run this Project***
 S1: Make your virtual environment on any coding platform
