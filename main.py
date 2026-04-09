@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # --- Configuration ---
 ADMIN_USER = "admin"
-ADMIN_PASS = "mtech2026"
+ADMIN_PASS = "jaishreeram"
 UPLOAD_FOLDER = 'static/uploads'
 FIXED_SIZE = (640, 480)  # The "Secret Sauce" for visual consistency
 
