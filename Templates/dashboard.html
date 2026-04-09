@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ITMS Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* 🌙 Dark Theme Background */
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* 🔥 Glass Effect Container */
+        .glass-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        /* 🚗 Lane Box Styling */
+        .lane-box {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lane-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+        }
+
+        /* 📍 Lane Label */
+        .lane-label {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* 🔴 LIVE Indicator */
+        .live-badge {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: red;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.4; }
+        }
+
+        /* 🖼 Video Styling */
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        /* 🏷 Title */
+        h2 {
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0,255,255,0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid py-4">
+        <h2 class="text-center mb-4">🚦 Smart Traffic Dashboard</h2>
+
+        <div class="glass-container">
+
+            <!-- Row 1 -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="lane-box">
+                        <span class="lane-label">Lane 1</span>
+                        <span class="live-badge">LIVE</span>
+                        <img src="{{ url_for('video_feed', lane_id=1) }}">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="lane-box">
+                        <span class="lane-label">Lane 2</span>
+                        <span class="live-badge">LIVE</span>
+                        <img src="{{ url_for('video_feed', lane_id=2) }}">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="lane-box">
+                        <span class="lane-label">Lane 3</span>
+                        <span class="live-badge">LIVE</span>
+                        <img src="{{ url_for('video_feed', lane_id=3) }}">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="lane-box">
+                        <span class="lane-label">Lane 4</span>
+                        <span class="live-badge">LIVE</span>
+                        <img src="{{ url_for('video_feed', lane_id=4) }}">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
